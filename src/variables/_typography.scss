@@ -1,0 +1,39 @@
+@use 'sass:map';
+@use '../fonts/index' as fonts;
+@use './sizing.scss' as sizing;
+@use './theme.scss' as theme;
+
+
+//Typography Variables
+//Font Families
+$font-family-body: "font-inter", sans-serif;
+$font-family-heading: "font-fira-code", monospace;
+
+
+//Font Weights
+$fw-black: 900;
+$fw-extrabold: 800;
+$fw-bold: 700;
+$fw-semibold: 600;
+$fw-medium: 500;
+$fw-regular: 400;
+$fw-light: 300;
+$fw-extralight: 200;
+$fw-thin: 100;
+
+//line heights
+$line-height-base: 1.6;
+$line-height-heading: 1.2;
+
+//Font Sizes utilities
+@each $size, $value in sizing.$font-sizes {
+    .text-#{$size} {
+        font-size: $value;
+    }
+}
+//Text color utilities
+@each $name, $color in theme.$theme {
+    .text-#{$name} {
+        color: $color;
+    }
+}
